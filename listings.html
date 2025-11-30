@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Property Listings</title>
+  </head>
+  <body>
+    <h1>Property Listings</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>SqFt</th>
+          <th>Price</th>
+          <th># Beds</th>
+          <th># Baths</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in results %}
+        <tr>
+          <td>{{ result['location']['address']['line'] }}</td>
+          <td>{{ result['description']['sqft'] }}</td>
+          <td>{{ result['list_price'] }}</td>
+          <td>{{ result['description']['beds'] }}</td>
+          <td>{{ result['description']['baths'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
